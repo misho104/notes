@@ -1,0 +1,132 @@
+% Time-Stamp: <2014-11-03 14:25:55 misho>
+
+\documentclass[10pt,a4paper]{article}
+\pdfoutput=1
+% -------------------------------------------------------- Page Styles
+\voffset-1in
+\oddsidemargin  .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+\textwidth      .72\paperwidth
+\hoffset-1in
+\topmargin  .05\paperheight
+\headheight .02\paperheight
+\headsep    .03\paperheight
+\footskip   .07\paperheight
+\textheight .76\paperheight
+% ----------------------------------------------------------- Packages
+\usepackage{amsmath,amssymb,url,cite,ifpdf,slashed,hyperref}
+%%%UNUSED%%% \usepackage{feynmp,wrapfig,enumerate,hyperref}
+\renewcommand\citepunct{,\penalty1000\hskip.13emplus.1emminus.1em\relax} % no line-break in \cite
+
+\ifpdf                                     % For pdfLaTeX
+  \usepackage{graphicx}                    %   usepackage without driver option
+% \DeclareGraphicsRule{*}{mps}{*}{}        %   [For feynMP] Accept metapost graphics
+\else                                      % For (p)LaTeX + dvipdfmx
+  \usepackage[dvipdfmx]{graphicx}          %   usepackage with driver option
+% \usepackage{mediabb}                     %   [For PDF graphics] Automatic PDF-bounding box
+\fi
+
+%%% Use AMS commands instead of default ones
+\let\check\Check
+\let\acute\Acute
+\let\grave\Grave
+\let\dot\Dot
+\let\ddot\Ddot
+\let\breve\Breve
+\let\vec\Vec
+
+% ---------------------------------------------------- For Sho's Notes
+\usepackage{fancyhdr,color,soul}
+\usepackage[hhmmss]{datetime}
+\newdateformat{mydate}{\THEDAY\;\shortmonthname.\;\THEYEAR}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{\tt[\jobname~@~\mydate\today~\currenttime]}
+
+% ----------------------------------------------------------- Commands
+\newcommand{\un}[1]{\,{\rm #1}}
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\invfb}{\,{\rm fb^{-1}}}
+\newcommand{\invpb}{\,{\rm pb^{-1}}}
+
+%%% SPECIFIC TO THIS ARTICLE
+\renewcommand\thefootnote{*\arabic{footnote}}
+%\newcommand{\vev}[1]{\left\langle #1\right\rangle}
+\newcommand{\s}[1]{_{\rm #1}}
+\newcommand{\MET}{{\slashed{E}\s T}}
+\newcommand{\neut}[1]{\tilde\chi^0_{#1}}
+\newcommand{\slep}{\tilde l}
+%\newcommand{\PL}{{\rm P_L}}
+%\newcommand{\PR}{{\rm P_R}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\ee}{{\rm e}}
+%\newcommand{\CParrow}{\xrightarrow{CP}}
+\newcommand{\vc}[1]{{\boldsymbol{#1}}}
+%\newcommand{\averaged}[1]{\left\langle{#1}\right\rangle}
+%\newcommand{\PT}{p\s{T}}
+%\newcommand{\vabs}[1]{\|#1\|}
+%\newcommand{\app}[2]{%
+%  \mathrel{%
+%    \setbox0=\hbox{$#1\sim$}\setbox2=\hbox{\rlap{\hbox{$#1\propto$}}\lower1.1\ht0\box0}%
+%    \raise0.25\ht2\box2}}
+%\newcommand{\approxprop}{\mathpalette\app\relax}
+
+
+%%% FOOTNOTE FOR TITLEPAGE
+\makeatletter
+\newcommand{\@authornote}[2]{{\def\thefootnote{\fnsymbol{footnote}}\setcounter{footnote}{#1}#2\setcounter{footnote}{0}}}
+\newcommand{\authornotemark}[1]{\@authornote#1{\addtocounter{footnote}{-1}\footnotemark}}
+\newcommand{\authornotetext}[2]{\@authornote#1{\footnotetext{#2}}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% remove these commands when finalizing
+\bibliographystyle{mystylewithtitle}
+\def\TODO#1{ {\bf ($\clubsuit$ #1 $\clubsuit$)} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{CMS Search for $H\to\mu\tau$}
+\author{Sho Iwamoto\thanks{Physics Department, Technion; \href{mailto:sho@physics.technion.ac.il}{\tt sho@physics.technion.ac.il}}}
+\date{\mydate\today}
+\begin{document}
+\maketitle
+
+A good presentation slides can be found in \url{https://particles.golem.ph.utexas.edu/forum/forums/lhc-leptons-x/topics/discussion-session-102914}\footnote{Direct link: \url{https://utexas.app.box.com/s/jxw5uogaj0d4fv3gc5ru}}
+
+\paragraph{Experiments}
+\begin{itemize}
+ \item CMS conf-note of $h\to\mu\tau$ \cite{CMSPASHIG14005}
+ \item CMS $\tau$-id (HPS) \cite{Chatrchyan:2012zz}
+\end{itemize}
+
+\paragraph{Constraints}
+\begin{itemize}
+ \item Refs.~\cite{Blankenburg:2012ex,Harnik:2012pb}
+\end{itemize}
+
+\paragraph{BSM Models (1)}
+\begin{itemize}
+ \item Leptoquark discussed in the above presentation
+\begin{itemize}
+ \item  no refs found for leptoquark model with fine-tune suppression of $\tau\to\mu\gamma$
+\end{itemize}
+ \item Vector-like lepton \cite{Falkowski:2013jya}
+ \item Type-III 2HDM \cite{Sierra:2014nqa}
+\end{itemize}
+
+\paragraph{BSM Models (2)}
+\begin{itemize}
+ \item Minimal flavor violation (MFV) or Froggatt--Nielsen (FN) \cite{Dery:2014kxa}
+ \item $S_4$ flavor symmetry with separated $(e\s R,\mu\s R)$--$(\tau\s R)$ \cite{Campos:2014zaa}
+ \item Lepton-flavored DM with MFV \cite{Lee:2014rba}
+\end{itemize}
+\newpage
+\bibliography{h2mutau}
+\end{document}
