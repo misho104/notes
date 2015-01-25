@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Time-Stamp: <2014-03-11 17:36:51 misho>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{article}
+%\pdfoutput=1
+% -------------------------------------------------------- Page Styles
+\voffset-1in
+\oddsidemargin  .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+\textwidth      .72\paperwidth
+\hoffset-1in
+\topmargin  .05\paperheight
+\headheight .02\paperheight
+\headsep    .03\paperheight
+\footskip   .07\paperheight
+\textheight .76\paperheight
+
+% ----------------------------------------------------------- Packages
+\usepackage{amsmath,amssymb,url,cite,ifpdf,slashed,multirow}
+%%%UNUSED%%% \usepackage{feynmp,wrapfig,enumerate,hyperref}
+\renewcommand\citepunct{,\penalty1000\hskip.13emplus.1emminus.1em\relax} % no line-break in \cite
+
+\ifpdf                                     % For pdfLaTeX
+  \usepackage{graphicx}                    %   usepackage without driver option
+% \DeclareGraphicsRule{*}{mps}{*}{}        %   [For feynMP] Accept metapost graphics
+\else                                      % For (p)LaTeX + dvipdfmx
+  \usepackage[dvipdfmx]{graphicx}          %   usepackage with driver option
+% \usepackage{mediabb}                     %   [For PDF graphics] Automatic PDF-bounding box
+\fi
+
+%%% Use AMS commands instead of default ones
+\let\check\Check
+\let\acute\Acute
+\let\grave\Grave
+\let\dot\Dot
+\let\ddot\Ddot
+\let\breve\Breve
+\let\vec\Vec
+
+% ----------------------------------------------------------- Commands
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\invfb}{\,{\rm fb^{-1}}}
+\newcommand{\invpb}{\,{\rm pb^{-1}}}
+
+%%% SPECIFIC TO THIS ARTICLE
+\newcommand{\vev}[1]{\left\langle #1\right\rangle}
+\newcommand{\s}[1]{_{\rm #1}}
+\newcommand{\mL}{m_{\rm L}}
+\newcommand{\mR}{m_{\rm R}}
+\newcommand{\Br}{\mathop{\mathrm{Br}}}
+\newcommand{\Order}{\mathop{\mathcal{O}}}
+\newcommand{\PT}{p\s T}
+\newcommand{\vc}[1]{\boldsymbol{#1}}
+
+\newcommand{\MET}{\slashed{E}\s T}
+\newcommand{\vMET}{\slashed{\vc{E}}\s T}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\diff}[2]{\frac{{\rm d}#1}{{\rm d} #2}}
+\newcommand{\dd}{{\mathrm d}}
+
+%%% FOOTNOTE FOR TITLEPAGE
+\makeatletter
+\newcommand{\@authornote}[2]{{\def\thefootnote{\fnsymbol{footnote}}\setcounter{footnote}{#1}#2\setcounter{footnote}{0}}}
+\newcommand{\authornotemark}[1]{\@authornote#1{\addtocounter{footnote}{-1}\footnotemark}}
+\newcommand{\authornotetext}[2]{\@authornote#1{\footnotetext{#2}}}
+\makeatother
+
+\def\smuL{\tilde\mu\s L}
+\def\smuR{\tilde\mu\s R}
+\def\stau#1{\tilde\tau_{#1}}
+\def\pmat#1{\begin{pmatrix}#1\end{pmatrix}}
+\def\pdiff#1#2{\frac{\partial #1}{\partial #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%    remove these commands when finalizing 
+\bibliographystyle{mystylewotitle}
+\def\TODO#1{ {\bf ($\clubsuit$ #1 $\clubsuit$)} }
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\subsection{Neutralino mass matrix}
+\begin{align}
+ M\s N &=
+\begin{pmatrix}
+ M_1 & 0 & -m_Z c_\beta s\s W & m_Z
+   s_\beta s\s W\\
+ 0 & M_2 & m_Zc_\beta c\s W & -m_Z
+   s_\beta c\s W \\
+ -m_Z c_\beta s\s W & m_Z c_\beta c\s W & 0 & -\mu  \\
+ m_Z s_\beta s\s W & -m_Z s_\beta
+   c\s W & -\mu  & 0 \\
+\end{pmatrix}
+\end{align}
+Partial diagonalization with
+\begin{align}
+ U=
+\begin{pmatrix}
+ c_W & s_W & 0 & 0 \\
+ -s_W & c_W & 0 & 0 \\
+ 0 & 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+ 0 & 0 & -\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\end{pmatrix},
+\end{align}
+\begin{align}
+ UM\s NU^\dagger = \begin{pmatrix}\\
+ M_1 c_W^2+M_2 s_W^2 & \left(M_2-M_1\right) s_Wc_W & 0 & 0 \\
+ \left(M_2-M_1\right) s_Wc_W & M_2 c_W^2+M_1 s_W^2 & \frac1{\sqrt2}m_Z \left(s_{\beta
+   }+c_{\beta }\right) & \frac1{\sqrt2}m_Z \left(s_{\beta }-c_{\beta
+   }\right)\\
+ 0 & \frac1{\sqrt2}m_Z \left(s_{\beta }+c_{\beta }\right)& \mu  & 0 \\
+ 0 & \frac1{\sqrt2}m_Z \left(s_{\beta }-c_{\beta }\right) & 0 & -\mu  \\
+                   \end{pmatrix}
+\end{align}
+
+\end{document}
