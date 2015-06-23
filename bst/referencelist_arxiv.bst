@@ -541,6 +541,14 @@ FUNCTION {format.eprint}
   if$
 }
 
+FUNCTION {format.eprint.simple}
+{
+  eprint empty$
+    { "" }
+    { "\href{http://arxiv.org/abs/" eprint * "}{" * eprint * "}:" * }
+  if$
+}
+
 FUNCTION {format.url}
 { url empty$
     { "" }
@@ -552,7 +560,15 @@ FUNCTION {add.doi}
 { duplicate$ empty$
     { skip$ }
     { doi empty$
-        {}
+        { journal missing$ url empty$ or
+          'skip$
+          { journal "l" change.case$ "econf" =
+            {"\href{" url * "}{" * swap$ * "}" * }
+            'skip$
+            if$
+          }
+          if$
+        }
         {"\href{http://dx.doi.org/" doi * "}{" * swap$ * "}" *}
       if$
     }
@@ -986,6 +1002,7 @@ FUNCTION {format.journal}
 
 FUNCTION {article}
 { output.bibitem
+  format.eprint.simple output blank.sep
 %  format.collaboration output
   format.authors "author" output.check
   format.title "title" output.check
@@ -994,20 +1011,22 @@ FUNCTION {article}
     { journal missing$   
         { year empty$
             { "" }
-            { " " format.date.paren * }
+            { " " format.date * }
           if$ 's :=
         }
         { format.journal add.doi "journal" output.check
           "" 's := }
       if$
-      report missing$
-        {format.eprint s * output}
-        {blank.sep format.report s * output format.eprint output}
-      if$
+%     report missing$
+%       {format.eprint s * output}
+%       {blank.sep format.report s * output format.eprint output}
+%     if$
+%     format.report output
+      s output
     }
     { format.article.crossref output.nonnull
       format.pages output
-      format.eprint output
+      % format.eprint output
     }
   if$
 %   new.sentence
@@ -1450,14 +1469,37 @@ FUNCTION {begin.bib}
   "\begingroup\raggedright\begin{thebibliography}{" longest.label  * 
   "}" * write$ newline$ }
 
+FUNCTION {eprint.id.extract.arxivold}{
+  eprint 't :=
+  "" 'u :=
+  { t empty$ not }
+    { t #1 #1 substring$ "/" =
+      { t #2 #1 substring$ "0" = {"20"} {"19"} if$
+        t #2 global.max$ substring$ * 'u :=
+        "" 't :=
+      }
+      { t #2 global.max$ substring$ 't := }
+      if$
+    }
+  while$
+  u
+}
+
+FUNCTION {eprint.id.extract}{
+  eprint.type "arXiv:old" =
+    { "00." eprint.id.extract.arxivold * }
+    { eprint }
+  if$
+}
+
 FUNCTION {presort}{
-  year field.or.null
   eprint empty$
-  { "    " * author field.or.null * }
-  { eprint.type duplicate$ "arXiv:old" = {pop$ "arXiv00"} { } if$ * eprint * }
+    { "  " year field.or.null * "  " * author field.or.null * }
+    { eprint.id.extract }
   if$
   'sort.key$ :=
 }
+
 ITERATE {presort}
 SORT
 
