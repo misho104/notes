@@ -1,0 +1,255 @@
+% Time-Stamp: <2015-06-28 19:14:49 misho>
+\documentclass[10pt,a4paper]{article}
+\pdfoutput=1
+% -------------------------------------------------------- Page Styles
+\voffset-1in
+\oddsidemargin  .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+\textwidth      .72\paperwidth
+\hoffset-1in
+\topmargin  .05\paperheight
+\headheight .02\paperheight
+\headsep    .03\paperheight
+\footskip   .07\paperheight
+\textheight .76\paperheight
+% ----------------------------------------------------------- Packages
+\usepackage{amsmath,amssymb,url,cite,ifpdf,slashed,multirow,wrapfig,booktabs,color}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=magenta]{hyperref}
+%%%UNUSED%%% \usepackage{feynmp,enumerate}
+\renewcommand\citepunct{,\penalty1000\hskip.13emplus.1emminus.1em\relax} % no line-break in \cite
+
+\ifpdf                                     % For pdfLaTeX
+  \usepackage{graphicx}                    %   usepackage without driver option
+% \DeclareGraphicsRule{*}{mps}{*}{}        %   [For feynMP] Accept metapost graphics
+\else                                      % For (p)LaTeX + dvipdfmx
+  \usepackage[dvipdfmx]{graphicx}          %   usepackage with driver option
+% \usepackage{mediabb}                     %   [For PDF graphics] Automatic PDF-bounding box
+\fi
+
+%%% Use AMS commands instead of default ones
+\let\check\Check
+\let\acute\Acute
+\let\grave\Grave
+\let\dot\Dot
+\let\ddot\Ddot
+\let\breve\Breve
+\let\vec\Vec
+
+% ---------------------------------------------------- For Sho's Notes
+\usepackage{fancyhdr,color,soul}
+\usepackage[hhmmss]{datetime}
+\newdateformat{mydate}{\THEDAY\;\shortmonthname.\;\THEYEAR}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{\tt[\jobname~@~\mydate\today~\currenttime]}
+
+% ----------------------------------------------------------- Commands
+\newcommand{\un}[1]{\,{\rm #1}}
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\fb}{\,{\rm fb}}
+\newcommand{\pb}{\,{\rm pb}}
+\newcommand{\iab}{\,{\rm ab^{-1}}}
+\newcommand{\ifb}{\,{\rm fb^{-1}}}
+\newcommand{\ipb}{\,{\rm pb^{-1}}}
+
+%%% SPECIFIC TO THIS ARTICLE
+\makeatletter
+\def\EE{\@ifnextchar-{\@@EE}{\@EE}}
+\def\@EE#1{\ifnum#1=1 \times\!10 \else \times\!10^{#1}\fi}
+\def\@@EE#1#2{\times\!10^{-#2}}
+\makeatother
+\renewcommand\thefootnote{*\arabic{footnote}}
+\newcommand{\software}[1]{\texttt{#1}}
+\newcommand{\mET}{{\slashed E}\s T}
+%\newcommand{\vev}[1]{\left\langle #1\right\rangle}
+\newcommand{\s}[1]{_{\rm #1}}
+%\newcommand{\PL}{{\rm P_L}}
+\newcommand{\Order}{\mathop{\mathrm O}}
+%\newcommand{\PR}{{\rm P_R}}
+%\newcommand{\ii}{{\rm i}}
+\newcommand{\dd}{{\rm d}}
+%\newcommand{\ee}{{\rm e}}
+\newcommand{\PT}{p\s{T}}
+\newcommand{\MET}{\slashed{E}\s T}
+\newcommand{\vc}[1]{{\boldsymbol{#1}}}
+%\newcommand{\averaged}[1]{\left\langle{#1}\right\rangle}
+\newcommand{\vabs}[1]{\|#1\|}
+
+
+%%% FOOTNOTE FOR TITLEPAGE
+%\makeatletter
+%\newcommand{\@authornote}[2]{{\def\thefootnote{\fnsymbol{footnote}}\setcounter{footnote}{#1}#2\setcounter{footnote}{0}}}
+%\newcommand{\authornotemark}[1]{\@authornote#1{\addtocounter{footnote}{-1}\footnotemark}}
+%\newcommand{\authornotetext}[2]{\@authornote#1{\footnotetext{#2}}}
+%\makeatother
+
+%%% EPRINT NUMBER TRICK
+\makeatletter
+\let\ORG@citex\@citex
+\def\@citex[#1]#2{\@ifundefined{name@#2}{\!}{{\csname name@#2\endcsname}}\!\ORG@citex[#1]{#2}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% remove these commands when finalizing
+\bibliographystyle{bst/referencelist}
+\def\TODO#1{ {\bf ($\clubsuit$ #1 $\clubsuit$)} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{secnumdepth}{2}
+\begin{document}
+\section[100TeV Colliders]{100\,TeV Colliders}
+\subsection{Keynotes}
+\begin{itemize}
+ \item Key note talks in FCC week 2015 by \cite{FCCweek2015:Benedikt} and \cite{FCCweek2015:Schulte}.
+ \item Preliminary CDR~\cite{CEPC-SppC-CDR}.
+\end{itemize}
+
+\subsubsection{Machine design, luminosity and cross section}
+\begin{itemize}
+ \item \cite{Barletta:2014vea} for a review of accelerator physics for future colliders.
+ \item \cite{Assadi:2014nea} for overview and cost estimate.
+ \item \cite{Richter:2014pga} (also \cite{Barletta:2014vea}) reminded us that $\sigma\propto E^{-2}$ (or $s^{-1}$) and pointed out that the luminosity goal should be set as $(100/14)^2\times\text{(LHC value)}$ in order to maintain the discovery potential, and to get funded.
+       Because of the Lorentz contraction the luminosity is expected to scale as $\propto s$, this claim for $15\iab$ ($=300\fb$\text{@LHC}) is fairly reasonable.
+ \item Based on the discussion, \cite{Hinchliffe:2015qma} also calls for an integrated luminosity of 10--$20\iab$ with showing the cross sections for several processes, but ``have not found generic arguments to justify them.''
+\end{itemize}
+
+\begin{itemize}
+ \item \cite{Rizzo:2015yha} studies cross section scaling. Naive estimation gives $\sigma$ scales as $E^2\sigma(m,E)=E_0^2\sigma(m\frac{E_0}{E},E_0)$, but because of PDF evolution and $\alpha\s s$ running, $\sigma$ at higher energy drops more rapidly, especially for process involving gluon PDF ($\sim-50\%$) or more QCD-couplings ($\sim-15\%$ for each).
+\end{itemize}
+
+
+\subsection{Phenomenology}
+
+\subsubsection{Snowmass 2013}
+\begin{itemize}
+  \item \cite{Avetisyan:2013onh} provides Snowmass SM Background set, the detector simulation for which is explained in \cite{Anderson:2013kxz}. See also the talks in SLAC (2014): \cite{SLACFCC2014:Selvaggi} and \cite{SLACFCC2014:Hirschauer}.
+
+ \item $t\bar t$ charge asymmetry in \cite{Berge:2013csa}.
+ \item $q$-compositeness ($jj$ angular dist.) in \cite{Apanasevich:2013cta}.
+ \item $hh$ in \cite{Yao:2013ika}: $bb\gamma\gamma$ channel is utilized to measure HSC at $8\%$ (stat only). This is included in Higgs WG report, \cite{Dawson:2013bba}.
+
+ \item $\tilde q$ and $\tilde g$ in \cite{Cohen:2013zla}, extended in \cite{Cohen:2013xda}: see ``SUSY'' below.
+ \item Warped XD in \cite{Agashe:2013kyb} but at $33\TeV$. $Z'\to t\s{h}t\s{h}$, $G^{(1)}\to Z_\mu Z_j$, $g^{(1)}\to t\s{h}t\s{l}$, and KK $Z/W/\gamma$ are thoroughly studied.
+ \item $jj$ resonance in \cite{Yu:2013wta} (singlet $Z'$ \& octet $G'$) and \cite{Anderson:2013ida} ($q^*$).
+ \item $Z'$ in \cite{Godfrey:2013eta} (20--$30\TeV$).
+ \item Vector-like top quarks in \cite{Andeen:2013zca}.
+\end{itemize}
+
+\subsubsection{General}
+\begin{itemize}
+ \item \cite{Larkoski:2014bia} examines jet physics: winner-take-all aces, soft drop clustering, and Sudakov-safe observables. The first two works very well to remove contaminations from pile-up etc.
+
+ \item \cite{Hook:2014rka} investigates $W$- and $Z$-radiation from $E\gtrsim1\TeV$ particles, which can be utilized to see $\nu$ (or to determine $\slashed p$), to determine $\mathop{\mathrm{SU}}(2)$ charge of new particles, and in the decay of heavy scalar whose 3-body decays are enhanced.
+\end{itemize}
+
+\subsubsection{SUSY}
+For colored SUSY particles pair-production (production crosssections in \cite{Borschensky:2014cia}),
+\begin{itemize}
+
+ \item $\tilde q$ and $\tilde g$ in \cite{Cohen:2013xda}: $\tilde g\tilde g(\tilde q\tilde q)\to 4q(2q)+\MET$ (both of splitted and degenerate), $\tilde q\tilde q+\tilde q\tilde g+\tilde g\tilde g$ with massless $\tilde\chi_1^0$, and $\tilde g\tilde g\to4t+\MET$ are studied. CMSSM interpretation is found in \cite{Fowlie:2014awa} and \cite{Fowlie:2014xha}.
+ \item \cite{Jung:2013zya} studies Split-SUSY ($\Order(1)\TeV$ inos while decoupled sfermions) motivated by DM and $m_h$ ($m_{\tilde q}\lesssim100\TeV$). Signal is $2^+j0l\MET$ from $\tilde g\to \tilde w\bar qq$ pair; AMSB, GMSB, and mirage are in scope. They say the thermal wino LSP cannot be covered even with $10\iab$.
+ \item \cite{Beauchesne:2015jra} also studies (mini-) Split-SUSY based on GMSB and (deflected) AMSB; $\tilde g$ decays into $t$ and $b$, i.e.,  $2^+b0l\MET$ and $2^+l^{\rm SS}8^+j(2^+b)\MET$ are considered. Thermal wino LSP region is not fully covered.
+ \item \cite{Ellis:2015xba} analyzes $\tilde q$+gaugino production, where $\tilde q$ of $30\TeV$ ($\tilde g$, $8\TeV$), $14\TeV$ ($\tilde W$, $4\TeV$), and $9\TeV$ ($\tilde B$, 2--$3\TeV$) are within the reach of exclusion. They also pointed out that gluino--neutralino DM coannihilation region can be excluded for $\tilde q<32\TeV$.
+\item \cite{Cohen:2014hxa} analyzes $\tilde t\tilde t\to tt+\MET$. With a large mass splitting (boosted top), a $\mu$ in either of the leading $2j$ is required. Compressed spectra are also studied.
+ \end{itemize}
+For non-colored SUSY particle pair-production,
+ \begin{itemize}
+ \item \cite{Acharya:2014pua} studies $\tilde\chi\tilde\chi$ production in $|\mu|<M_2\ll M_1, m_{\tilde l}$ (decoupled) case,  $3^{=}l0b+\MET$ signal.
+ \item \cite{Gori:2014oua} is more complete: scenarios with $M_1\gg M_2\,\&\,\mu$, $M_2\gg\mu>M_1$ and $\mu\gg M_2>M_1$ are studied with $3l$, $4l$, SS2$l$ and OS2$l$ signatures. They also mention that in $Z\to ll$ the leptons will be reconstructed as a single jet to degrade the searches.
+ \item \cite{diCortona:2014yua} extrapolates LHC results to obtain constraints at $100\TeV$ (no MC simulation), including $\tilde W\tilde H\to Wh(\to b\bar b)$ and disappearing $\tilde W$ signatures. DM interplay in models with split-SUSY, AMSB and GMSB are also studied.
+ \item \cite{Bramante:2014tba} studies $\tilde\chi^{0,\pm}$ searches motivated by the $M_1$--$M_2$--$\mu$ surface to explain $\Omega\s{DM}$.
+ \end{itemize}
+Exotic signals (also see the section ``Exotics''),
+\begin{itemize}
+ \item \cite{Low:2014cba} discusses SUSY DM searches: mono-jet (pure $\tilde W/\tilde H$, $\tilde B$-coann.\ with $\tilde g$, $\tilde t$, $\tilde q$), disappearing track (pure $\tilde W/\tilde H$), and soft leptons ($\tilde B$--$\tilde W$--$\tilde H$ mixed).
+ \item \cite{Cirelli:2014dsa} is an extension work, which focuses on $\tilde W$-like DM and additionally considers mono-$\gamma$, VBF $2j\s{forward}+\MET$.
+ \item \cite{Berlin:2015aba} also studies VBF $2j\s{forward}+\MET$, which perfomrs matching for additional jets, and considers $\tilde H$ case as well.
+ \item \cite{Arbey:2015hca} is also on mono-jet searches; not citing the previous papers.
+\end{itemize}
+Also,
+\begin{itemize}
+ \item \cite{Ellis:2014kla} studies $G_2$-MSSM, predicting $m_{\tilde g}=1\text{--}2\TeV$ and $m_{\tilde q}\sim20\TeV$, in $\tilde g\tilde g$, $\tilde t\tilde g$, $\tilde b\tilde g$ and $\tilde \chi\tilde \chi$ productions, but only the crosssections are shown.
+\end{itemize}
+
+
+
+
+\subsubsection{Extra dimension}
+\begin{itemize}
+ \item \cite{Chen:2014oha} studies RS warped $G^{(1)}\to Z_{ll}Z_{\nu\nu}$.
+ \item \cite{Agashe:2014wba} studies RS warped $G^{(1)}\to\gamma_1\gamma\to W_jW_l\gamma$
+\end{itemize}
+
+
+\subsubsection[Z' and W']{$Z'$ and $W'$}
+\begin{itemize}
+ \item Earlier works for 100--$200\TeV$ pp colliders are \cite{Rizzo:1996pc} and \cite{Godfrey:2002tna}.
+ \item \cite{Rizzo:2014xma} provides much more realistic analysis, focusing on electron final states (because of worse momentum resolution of $\mu$). Coupling determination is discussed, and the importance of the three body decay (studied as early as in \cite{Cvetic:1991gk}\footnote{Further readings are \cite{Ciafaloni:2006qu}, \cite{Baur:2006sn} and \cite{Bell:2010gi}.}) is also referred.
+\end{itemize}
+
+\subsubsection{SM and Higgs sector}
+\begin{itemize}
+ \item \cite{Wen:2014mha} looks for $WWW$ production to see anomalous QGC ($W^4$ coupling).
+ \item \cite{Alves:2014cda} studies $\alpha_{1,2}(Q)$ measurement by DY $ll$ and $l\nu$ processes.
+ \item Di-Higgs production
+\begin{itemize}
+ \item \cite{Baglio:2012np} (cf.~\cite{Shao:2013bz}) calculates di-Higgs cross section.
+ \item \cite{Chen:2014xra} sees di-Higgs kinematical distributions to constraint $t\bar th$-, $h^3$- and non-SM $t\bar thh$-couplings.
+ \item \cite{Barr:2014sga} studies $hh\to bb\gamma\gamma$ and HSC determination, extending Snowmass work \cite{Yao:2013ika}, to conclude $\lambda/\lambda\s{SM} \in [0.64,1.45]$ ($[0.89,1.13]$) at $3\iab$ ($30\iab$).
+ \item \cite{Azatov:2015oxa} also did it, in EFT language, with a good review of past works.
+
+ \item \cite{Li:2015yia} studies $hh$ production in $4W\to 3l\s{SSSF}2j$ channel; fairly good at $100\TeV$.
+
+ \item \cite{Papaefstathiou:2015iba} studies rare channel of $hh$ production: $b\bar bZ_lZ_l$ (less prospective), $b\bar bZ_l\gamma$ (impossible), $b\bar b+2l$ (from $WW$ and $\tau\tau$ promising, but from $\mu\mu$ impossible for a large BKG).
+\end{itemize}
+ \item \cite{He:2014xla} tries to determine $tth$-coupling (strength and CP-structure) in $t\bar t h$ ($\to b\bar b$ and $\gamma\gamma$) but detector effects are not considered; theoretical analysis.
+ \end{itemize}
+
+\subsubsection{Exotics}
+ \begin{itemize}
+ \item \cite{Zhou:2013raa} studies mono-jet signature motivated by DM scenarios, based on EFT D5/8/9 and $Z'$ on-shell mediator.
+ \item \cite{Curtin:2014jma} considers EW baryogenesis with strong first-order EWPT, achieved with single $\mathbb Z_2$-odd singlet scalar, which can be constrained by HSC measurement or VBF production $h\to SS$, as well as searches at TLEP.
+ \item \cite{Craig:2014lda} also studies the model; $j+\MET$, $t\bar t+\MET$, and VBF $2j\s{forward}+\MET$ ($\MET$ from $h\to SS$) are considered.
+
+ \item \cite{Feng:2015wqa} studies the reach of long-lived $\tilde l$ searches, mentioning the worse momentum resolution at higher $\PT$ and the possibility of muon radiative energy loss.
+
+ \item \cite{Khoze:2015sra} studies the reach for $s$-ch.\ med.\ DM scenarios (Higgs portal and generalized) in searches for $2j\s{forward}+\MET$.
+ \end{itemize}
+
+
+\subsubsection{Other models}
+
+\subparagraph{2HDM}
+\cite{Auerbach:2014xua} studies the reach of $t\bar t$-resonance searches with cut-based top tagging.
+
+\cite{Hajer:2015gka} studies heavy Higgs searches with BDT $t$-tagging; $bbH/A\to bbtt/\tau\tau$ and $tbH^\pm\to tbtb$, and found that moderate $\tan\beta$ region is covered by $2b2t$ signals.
+
+\subparagraph{String resonances}
+\cite{Anchordoqui:2014wha} studies searches for string resonances in $jj$ and $\gamma j$ signatures.
+
+
+\subparagraph{Majorana neutrino}
+\cite{Alva:2014gxa} studies VBF $W\gamma\to Nl$, $t$-ch.\ enhanced and can be larger than DY $W^*\to Nl$, resulting in SS$2l$ signature. Signal is $2^{=}l^{\rm SS}2^+j$ without $\MET$. Their MC analysis is detailed and performed carefully.
+
+
+\subparagraph{Dark photon}
+\cite{Curtin:2014cca} studies dark-photon $\gamma'$ searches. With kinetic mixing only, $h\to Z\gamma'\to 4l$ ($m_{\gamma'} =12\text{--}62\GeV$) and DY $\gamma'\to ll$ (12--$90\GeV$ and $180\GeV$--) will exclude $\epsilon\gtrsim10^{-3}$. With Higgs mixing, $h\to\gamma\to4l$ ($2m_\mu$--$m_h/2$) is considered. Indirect constraints from ILC etc.\ are also discussed.
+
+
+\subparagraph{Composite Higgs}
+\cite{Kotwal:2015rba} studies $\eta\to hh\to 4\tau$ searches, highlighting the $4\tau$ channel as the golden-channel for di-Higgs production; also mentions the difficulty of $\tau$-tagging with $\PT\gtrsim1\TeV$.
+
+
+{\small
+\bibliography{bib/100TeV_collider}
+}
+\end{document}
+
+%%% Local Variables:
+%%% TeX-master: t
+%%% End:

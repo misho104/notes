@@ -1,0 +1,181 @@
+% Time-Stamp: <2015-06-13 22:33:42 misho>
+\documentclass[10pt,a4paper]{article}
+\pdfoutput=1
+% -------------------------------------------------------- Page Styles
+\voffset-1in
+\oddsidemargin  .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+\textwidth      .72\paperwidth
+\hoffset-1in
+\topmargin  .05\paperheight
+\headheight .02\paperheight
+\headsep    .03\paperheight
+\footskip   .07\paperheight
+\textheight .76\paperheight
+% ----------------------------------------------------------- Packages
+\usepackage{amsmath,amssymb,url,cite,ifpdf,slashed,multirow,wrapfig,booktabs,color}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=magenta]{hyperref}
+%%%UNUSED%%% \usepackage{feynmp,enumerate}
+\renewcommand\citepunct{,\penalty1000\hskip.13emplus.1emminus.1em\relax} % no line-break in \cite
+
+\ifpdf                                     % For pdfLaTeX
+  \usepackage{graphicx}                    %   usepackage without driver option
+% \DeclareGraphicsRule{*}{mps}{*}{}        %   [For feynMP] Accept metapost graphics
+\else                                      % For (p)LaTeX + dvipdfmx
+  \usepackage[dvipdfmx]{graphicx}          %   usepackage with driver option
+% \usepackage{mediabb}                     %   [For PDF graphics] Automatic PDF-bounding box
+\fi
+
+%%% Use AMS commands instead of default ones
+\let\check\Check
+\let\acute\Acute
+\let\grave\Grave
+\let\dot\Dot
+\let\ddot\Ddot
+\let\breve\Breve
+\let\vec\Vec
+
+% ---------------------------------------------------- For Sho's Notes
+\usepackage{fancyhdr,color,soul}
+\usepackage[hhmmss]{datetime}
+\newdateformat{mydate}{\THEDAY\;\shortmonthname.\;\THEYEAR}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{\tt[\jobname~@~\mydate\today~\currenttime]}
+
+% ----------------------------------------------------------- Commands
+\newcommand{\un}[1]{\,{\rm #1}}
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\fb}{\,{\rm fb}}
+\newcommand{\pb}{\,{\rm pb}}
+\newcommand{\invfb}{\,{\rm fb^{-1}}}
+\newcommand{\invpb}{\,{\rm pb^{-1}}}
+
+%%% SPECIFIC TO THIS ARTICLE
+\makeatletter
+\def\EE{\@ifnextchar-{\@@EE}{\@EE}}
+\def\@EE#1{\ifnum#1=1 \times\!10 \else \times\!10^{#1}\fi}
+\def\@@EE#1#2{\times\!10^{-#2}}
+\makeatother
+\renewcommand\thefootnote{*\arabic{footnote}}
+\newcommand{\software}[1]{\texttt{#1}}
+\newcommand{\mET}{{\slashed E}\s T}
+%\newcommand{\vev}[1]{\left\langle #1\right\rangle}
+\newcommand{\s}[1]{_{\rm #1}}
+%\newcommand{\PL}{{\rm P_L}}
+%\newcommand{\PR}{{\rm P_R}}
+%\newcommand{\ii}{{\rm i}}
+\newcommand{\dd}{{\rm d}}
+%\newcommand{\ee}{{\rm e}}
+\newcommand{\vc}[1]{{\boldsymbol{#1}}}
+%\newcommand{\averaged}[1]{\left\langle{#1}\right\rangle}
+\newcommand{\PT}{p\s{T}}
+\newcommand{\vabs}[1]{\|#1\|}
+
+
+%%% FOOTNOTE FOR TITLEPAGE
+%\makeatletter
+%\newcommand{\@authornote}[2]{{\def\thefootnote{\fnsymbol{footnote}}\setcounter{footnote}{#1}#2\setcounter{footnote}{0}}}
+%\newcommand{\authornotemark}[1]{\@authornote#1{\addtocounter{footnote}{-1}\footnotemark}}
+%\newcommand{\authornotetext}[2]{\@authornote#1{\footnotetext{#2}}}
+%\makeatother
+
+%%% EPRINT NUMBER TRICK
+\makeatletter
+\let\ORG@citex\@citex
+\def\@citex[#1]#2{\@ifundefined{name@#2}{}{{\csname name@#2\endcsname}}\!\ORG@citex[#1]{#2}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% remove these commands when finalizing
+\bibliographystyle{bst/referencelist}
+\def\TODO#1{ {\bf ($\clubsuit$ #1 $\clubsuit$)} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{secnumdepth}{2}
+\begin{document}
+\section{Spin determination at colliders}
+
+\subsubsection{Lepton colliders}
+Spin measurements in electron colliders are studied in \cite{Feng:1995zd}, \cite{Battaglia:2005zf}, \cite{Bhattacharyya:2005vm}, \cite{Bhattacherjee:2005qe}, \cite{Riemann:2005es}, and more.
+
+\subsubsection[LHC, q-l-l chain]{LHC, $q$--$l$--$l$ chain}
+
+\begin{itemize}
+ \item \cite{Barr:2004ze} considers SUSY $\tilde q \to \tilde\chi^0_2 \to \tilde l \to \tilde\chi^0_1$ cascade decay to find jet--lepton angular correlation. NLO correction is found in \cite{Horsky:2008yi}. As applications,
+\begin{itemize}
+ \item \cite{Smillie:2005ar} and \cite{Datta:2005zs} to discriminate SUSY and UED by the method (the power is not very strong); the former mentions the production cross section can be used as a criterion; the latter utilizes the second KK mode production.
+
+ \item \cite{Goto:2004cpa} to study L--R mixing of sleptons.
+ \item \cite{Choi:2008pi} to study whether the gaugino is Majorana or Dirac.
+ \item \cite{Hisano:2008ng} to determine electroweakino hierarchy.
+ \item \cite{Gedalia:2009ym}, with third-generation initial squark, to discriminate SUSY/UED.
+\end{itemize}
+
+ \item \cite{Alves:2006df} provides a technique to assert $\tilde g$ is Majorana fermion, based on the chain $\tilde g\to\tilde b(\tilde b^*)\to\tilde \chi^0_2\to\tilde l\to\tilde\chi^0_1$, where we can determine whether $\tilde b$ or $\tilde b^*$ is produced by measuring the daughter $b$.
+%
+ \item \cite{Wang:2006hk} is for chargino/neutralino spin determination in  $\tilde q\to qW\tilde\chi$ decay channel. It especially provides for $X\to Y\to Z$-chain with $p_1p_2Z$ final states
+ \begin{equation}
+  \frac{\dd\Gamma}{\dd t_{12}}=a_0+\cdots+a_{2s}(t_{12})^{2s}
+   \qquad\text{where}\quad t_{12} = (p_1+p_2)^2.
+ \end{equation}
+       This channel was studied later in \cite{Smillie:2006cd}.
+
+ \item \cite{Kilic:2007zk} extended the work to scenarios in which primary and intermediate particles with any spins.
+
+ \item A general framework for the spin determination in $D\to Cq\to Bql\to Aqll$ chain is found in \cite{Athanasiou:2006ef} (and \cite{Athanasiou:2006hv}) with plenty of analytic formulae.
+       More practical analyses are found in \cite{Burns:2008cp}.
+
+\end{itemize}
+
+\subsubsection{LHC, other chains}
+\begin{itemize}
+ \item\cite{Barr:2005dz} focuses on $\tilde l \tilde l^*$ DY production (short-lived) to discriminate SUSY/UED.
+      They propose a variable $\tanh(\eta_{l^+}-\eta_{l^-})/2$, which is boost-invariant and thus can be useful.
+
+ \item\cite{Alwall:2007ed} considers $\tilde W^+\tilde W^+jj$ VBF production, mediated by Majorana neutralino, and detemines the spin of $\tilde W^+$ (long-lived) by $m_{jj}$ of the forward jets.
+
+ \item\cite{Alves:2007xt} is the same analysis for $\tilde b\tilde b^*$ DY production.
+
+ \item\cite{Csaki:2007xm} uses $m_{jj}$ distribution of $\tilde g\to jj\tilde\chi^0_1$ process to discriminate SUSY/UED.
+
+ \item\cite{Ehrenfeld:2009rt} uses chains with $\gamma$, i.e., $\tilde\chi^0_2\to\tilde l\to\tilde\chi^0_1\to\tilde G$ ($ll\gamma$) and $\tilde q\to \tilde\chi^0_1\to\tilde G$ ($q\gamma$) to discriminate spins, but the power is not significant.
+      
+ \item \cite{Kim:2011zzg} discusses mass and spin measurement in $\tilde q\s L\to qZ(\to ll)\tilde\chi^0_1$ chain, where intermediate $\tilde\chi^0_2$ can be polarized which results in the angular distribution of $Z$.
+ \end{itemize}
+
+
+\subsubsection{LHC, indirect spin measurement}
+\begin{itemize}
+ \item \cite{Datta:2005vx} focuses on same-sign di-lepton events and utilizes its cross section for SUSY/UED discrimination.
+ \item\cite{Meade:2006dw} discusses $t'$ pair-production, where $t'$ is a particle decaying into $t+\text{missing}$, and its mass and spin determination. The mass is determined by cross section in a two-fold way (lower for scalar, higher for fermion), and then, as an indirect spin determination, the angular distribution {\em in the lab frame} is utilized to distinguish the two-fold.
+      A detector simulation is considered in \cite{Hallenbeck:2008hf}.
+ \item \cite{Kane:2008kw} discusses crosssection-based spin measurement in colored pair production.
+\end{itemize}
+
+% \item \cite{Rajaraman:2007ae} initiates spin measurement of LLCP.
+
+
+\subsubsection{Others}
+\begin{itemize}
+ \item \cite{Alves:2008up} determines the spin of a resonance $V^+$ in $pp\to V^+jj$ (VBF) $\to WZjj$ process, possible in Higgsless models, where $\cos\theta^*_{ll}$ is utilized.
+ \item \cite{Graesser:2008qi} collects possible correlations in $b$--$\tau$, $b$--$l$, and $\tau$--$l$, including possible mixings, but merely theoretical calculation.
+\end{itemize}
+
+
+
+
+
+%\cite{Rajaraman:2007ae}
+%\cite{Feng:2015wqa}
+\bibliography{bib/lhc_spin_measurement}
+\end{document}
+
+%%% Local Variables:
+%%% TeX-master: t
+%%% End:
