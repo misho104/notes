@@ -1,0 +1,192 @@
+% Time-Stamp: <2016-11-15 14:06:18 misho>
+\documentclass[10pt,a4paper]{article}
+%$\pdfoutput=1
+% -------------------------------------------------------- Page Styles
+\voffset-1in
+\oddsidemargin  .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+\textwidth      .72\paperwidth
+\hoffset-1in
+\topmargin  .05\paperheight
+\headheight .02\paperheight
+\headsep    .03\paperheight
+\footskip   .07\paperheight 
+\textheight .76\paperheight
+% ----------------------------------------------------------- Packages
+\usepackage{amsmath,amssymb,url,cite,booktabs,cancel,hyperref,soul}
+%%%UNUSED%%% \usepackage{ifpdf,slashed,multirow,wrapfig,cancel,feynmp,enumerate,hyperref}
+\renewcommand\citepunct{,\penalty1000\hskip.13emplus.1emminus.1em\relax} % no line-break in \cite
+
+%\ifpdf                                     % For pdfLaTeX
+  \usepackage{graphicx}                    %   usepackage without driver option
+% \DeclareGraphicsRule{*}{mps}{*}{}        %   [For feynMP] Accept metapost graphics
+%\else                                      % For (p)LaTeX + dvipdfmx
+% \usepackage[dvipdfmx]{graphicx}          %   usepackage with driver option
+% \usepackage{mediabb}                     %   [For PDF graphics] Automatic PDF-bounding box
+%\fi
+
+%%% Use AMS commands instead of default ones
+\let\check\Check
+\let\acute\Acute
+\let\grave\Grave
+\let\dot\Dot
+\let\ddot\Ddot
+\let\breve\Breve
+\let\vec\Vec
+
+\renewcommand{\thefootnote}{$\ast$\arabic{footnote}}
+
+% ----------------------------------------------------------- Commands
+\newcommand{\un}[1]{\,{\rm #1}}
+\newcommand{\TeV}{\,{\rm TeV}}
+\newcommand{\GeV}{\,{\rm GeV}}
+\newcommand{\MeV}{\,{\rm MeV}}
+\newcommand{\keV}{\,{\rm keV}}
+\newcommand{\ab}{\,{\rm ab}}
+\newcommand{\fb}{\,{\rm fb}}
+\newcommand{\pb}{\,{\rm pb}}
+\newcommand{\ifb}{\,{\rm fb^{-1}}}
+\newcommand{\ipb}{\,{\rm pb^{-1}}}
+\newcommand{\iab}{\,{\rm ab^{-1}}}
+\newcommand{\Order}{\mathcal O}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+%%% SPECIFIC TO THIS ARTICLE
+\newcommand{\w}[1]{_{\rm #1}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\ee}{{\rm e}}
+\newcommand{\vc}[1]{{\boldsymbol{#1}}}
+\newcommand{\Br}{\mathop{\mathrm {Br}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% remove these commands when finalizing
+\bibliographystyle{referencelist}
+\usepackage{fancyhdr,color,soul}
+\usepackage[hhmmss]{datetime}
+\newdateformat{mydate}{\THEDAY\;\shortmonthname.\;\THEYEAR}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{\tt[\jobname~@~\mydate\today~\currenttime]}
+\newcommand\TODO[1]{ {\bf ($\clubsuit$ #1 $\clubsuit$)} }
+\makeatletter
+\protected\def\EE{\@ifnextchar-{\@@EE}{\@EE}}
+\protected\def\@EE#1{\ifnum#1=1 \!\times\!10 \else \!\times\!10^{#1}\fi}
+\protected\def\@@EE#1#2{\!\times\!10^{-#2}}
+\let\ORG@citex\@citex
+\def\@citex[#1]#2{\@ifundefined{name@#2}{\!}{{\csname name@#2\endcsname}}\!\ORG@citex[#1]{#2}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\subsection{Three-body phase space}
+In the notation of \url{http://hitoshi.berkeley.edu/233B/phasespace.pdf},
+\begin{equation}
+   \int\dd\Phi_3
+   =\int
+   \frac{\dd s_{23}}{2\pi}
+   \frac{\dd \cos\theta_1}{2}
+   \frac{\dd \phi_1}{2\pi}
+   \frac{\bar\beta_1(\frac{m_1^2}{s},\frac{s_{23}}{s})}{8\pi}
+   \frac{\dd\cos\hat\theta_{23}}{2}
+   \frac{\dd\hat\phi_{23}}{2\pi}
+   \frac{\bar\beta_{23}(\frac{m_2^2}{s_{23}},\frac{m_3^2}{s_{23}})}{8\pi},
+\end{equation}
+where $(\theta_1,\phi_1)$ is the solid angle for $p_1$ (thus $p_{23}$), $(\hat\theta_{23},\hat\phi_{23})$ is that for $p_2$ (thus $p_3$) evaluated in the rest frame of $p_{23}$, $s_{ij}$ are equal to $m_{ij}^2$ in the traditional Dalitz language, and
+\begin{align}
+ \bar\beta(x,y)&:=\sqrt{1-2(x+y)+(x-y)^2};
+ &
+ \bar\beta_1 &:= \bar\beta\left(\frac{m_1^2}{s},\frac{s_{23}}{s}\right),
+ &
+ \bar\beta_{23} &:= \bar\beta\left(\frac{m_2^2}{s_{23}},\frac{m_3^2}{s_{23}}\right)
+ \end{align}
+(the subscript of $\bar\beta$ is (perhaps) just redundancy for clarity).
+
+For a spherically-symmetric integrand $|\mathcal M|^2$,
+\begin{itemize}
+ \item we can drop $\dd\cos\theta_1/2$ and $\dd\phi_1/2\pi$,
+ \item we can take $\hat\theta_{23}$ relative to $-p_1=p_{23}$ (in $p_1+p_2+p_3$ rest frame) to drop $\dd\hat\phi_{23}/2\pi$,
+\end{itemize}
+to get
+\begin{equation}
+   \int\dd\Phi_3
+   =\int
+   \frac{\dd s_{23}}{2\pi}
+   \frac{\bar\beta_1(\frac{m_1^2}{s},\frac{s_{23}}{s})}{8\pi}
+   \frac{\dd\cos\hat\theta_{23}}{2}
+   \frac{\bar\beta_{23}(\frac{m_2^2}{s_{23}},\frac{m_3^2}{s_{23}})}{8\pi}.
+\label{eq:dphi3reduced}
+\end{equation}
+
+\subsubsection{Energy fractions}
+Eq.~\eqref{eq:dphi3reduced} is rewritten by the energy fractions
+\begin{equation}
+ x_i = \frac{E_i}{\sqrt{s}/2}
+\end{equation}
+with using the relations
+\begin{align}
+ s &= (E_1+E_2+E_3)^2 = (\hat E_1+\hat E_2+\hat E_3)^2-|\hat {\vc p}_1|^2,
+ &
+ s_{23} &= (\sqrt{s}-E_1)^2-|\vc p_1|^2 = (\hat E_2+\hat E_3)^2.
+\end{align}
+From the second equation, we know $s_{23}=s+m_1^2-s x_1$ and
+\begin{equation}
+   \int\dd\Phi_3
+   =\int
+   \frac{s \dd x_1}{2\pi}
+   \frac{\bar\beta_1(\frac{m_1^2}{s},\frac{s_{23}}{s})}{8\pi}
+   \frac{\dd\cos\hat\theta_{23}}{2}
+   \frac{\bar\beta_{23}(\frac{m_2^2}{s_{23}},\frac{m_3^2}{s_{23}})}{8\pi}.
+\end{equation}
+where
+\begin{equation}
+ x_1=\left[\frac{2m_1}{\sqrt s}, 1+\frac{m_1^2-(m_2+m_3)^2}{s}\right].
+\end{equation}
+
+The rest frame of $p_{23}$ is now fixed by $x_1$. Setting the $z$-axis as the direction of $\vc p_1$,
+\begin{align}
+ p_1 &= \frac{\sqrt s}{2}\pmat{x_1\\ 0 \\ 0 \\s},
+& q_{23} = \frac{\sqrt s}{2}\pmat{x_1\\ 0 \\ 0 \\s}
+\end{align}
+
+\subsubsection{Dalitz plot}
+In PDG Review, Eq.~\eqref{eq:dphi3reduced} is expressed by
+\begin{equation}
+   \int\dd\Phi_3
+   =\int
+   \frac{\dd s_{12}}{2\pi}
+   \frac{\bar\beta_3(\frac{m_3^2}{s},\frac{s_{12}}{s})}{8\pi}
+   \frac{\dd\cos\hat\theta_{12}}{2}
+   \frac{\bar\beta_{12}(\frac{m_1^2}{s_{12}},\frac{m_2^2}{s_{12}})}{8\pi},
+\end{equation}
+where variables with hats are in the rest frame of $p_{12}$. Then $\hat\theta_{12}$ is converted to $s_{23}$ by
+\begin{equation}
+\begin{split}
+ s_{23}
+ &= (p_2+p_3)^2
+\\&=
+ m_2^2 + m_3^2 +2\left(\hat E_2\hat E_3 - \sqrt{\left(\hat E_2^2-m_2^2\right)\left(\hat E_3^2-m_3^2\right)}\cos\hat\theta_{12}\right),
+\end{split}\end{equation}
+where note that $\hat\theta_{12}$ is defined by the angle between $-\vc p_3$ and $\vc p_1$, and therefore the angle between $\vc p_2$ and $\vc p_3$. $\hat E_{i}$ are known by
+\begin{align}
+ (\hat E_1+\hat E_2+\hat E_3)^2 - |\hat {\vc p}_3|^2 &= s,
+ &
+ (\hat E_1+\hat E_2)^2 &= s_{12},
+\end{align}
+as
+\begin{align}
+  E_1&=\frac{s_{12}+m_1^2-m_2^2}{2\sqrt{s_{12}}},
+ &E_2&=\frac{s_{12}-m_1^2+m_2^2}{2\sqrt{s_{12}}},
+ &E_3&=\frac{s-s_{12}-m_3^2}{2\sqrt{s_{12}}}.
+\end{align}
+Thus,
+\begin{equation}
+    \int\dd\Phi_3
+   =\int
+   \frac{\dd s_{12}}{2\pi}
+   \frac{\bar\beta_3(\frac{m_3^2}{s},\frac{s_{12}}{s})}{8\pi}
+   \frac{\dd s_{23}}{4\sqrt{(\hat E_2^2-m_2^2)(\hat E_3^2-m_3^2)}}
+   \frac{\bar\beta_{12}(\frac{m_1^2}{s_{12}},\frac{m_2^2}{s_{12}})}{8\pi}
+=   \frac{1}{128\pi^3s}\int\dd s_{12}\dd s_{23}.
+\end{equation}
+
+\end{document}
