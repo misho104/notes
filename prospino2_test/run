@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# != 2 ]; then
+    echo "\tUsage: prospino_wrapper binary slha\n"
+    return 1
+fi
+
+binary=$1
+slha=$2
+prospino_dir=`git rev-parse --show-toplevel`/vendor/prospino2
+input=prospino.in.les_houches
+
+rm -f $input
+ln -s $slha $input
+if [ ! -d Pro2_subroutines ]; then
+  ln -s ${prospino_dir}/Pro2_subroutines .
+fi
+
+make $binary && ./$binary $input
+
+rm -f Pro2_subroutines $input

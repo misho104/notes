@@ -1,0 +1,3 @@
+[submodule "vendor/prospino2"]
+	path = vendor/prospino2
+	url = git://github.com/HEPcodes/prospino2.git
