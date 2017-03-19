@@ -1,3 +1,12 @@
 [submodule "vendor/prospino2"]
 	path = vendor/prospino2
 	url = git://github.com/HEPcodes/prospino2.git
+[submodule "vendor/FeynArts"]
+	path = vendor/FeynArts
+	url = git://github.com/HEPcodes/FeynArts.git
+[submodule "vendor/FormCalc"]
+	path = vendor/FormCalc
+	url = git://github.com/HEPcodes/FormCalc.git
+[submodule "vendor/FeynCalc"]
+	path = vendor/FeynCalc
+	url = git://github.com/FeynCalc/feyncalc.git
