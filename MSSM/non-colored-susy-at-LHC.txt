@@ -9,6 +9,7 @@
 - SUS-16-034       : 36 - N2C1 to WZ; M2 < 650
 - SUS-16-039       : 36 - N2C1 to WZ; M2 < 450
 - ATL-CONF-2020-015:139 - N2C1 to WZ; M2 < 650
+- SUS-20-001       :137 - N2C1 to WZ; M2 < 750 [sfos 2L]
 
 ### WH
 
@@ -71,6 +72,7 @@
 - SUS-17-009       : 36 - slsl to 2lep; Msl < 450
 - 1803.02762       : 36 - slep to 2lep
 - 1908.08215        139 - slsl to 2lep; Msl < 700
+- SUS-20-001       :137 - slep to 2lep; Msl < 740 [sfos 2L]
 
 - 1911.06660       :139 - stau to 2tau
 - SUS-18-006       : 77 - stau to 2tau; mtau < 200
