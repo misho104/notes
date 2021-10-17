@@ -2,51 +2,54 @@
 
 ### WZ
 
-- 2012.08600       :137 - N2C1 to WZ; M2 < 760 (jj+os2l)
-- SUS-19-012       :137 - N2C1 to WZ; M2 < 650 (3l)
-- ATL-CONF-2020-015:139 - N2C1 to WZ; M2 < 640
-- SUS-20-001       :137 - N2C1 to WZ; M2 < 750 (jj+os2l) [superseded by 2012.08600]
-- 1912.08479       :139 - N2C1 to WZ; M2 < 350
+- SUS-21-002       :137 - N2C1 to WZ; M2 < 690 (0l4j)
+- 2012.08600       :137 - N2C1 to WZ; M2 < 760 (jj+os2l) [supersedes SUS-20-001]
+- 2106.14246       :137 - N2C1 to WZ; M2 < 650 (sfos3L, 2lSS, 3-4l incl 0-2tau) [supersedes SUS-19-012]
+- 2108.07586       :139 - EWEW to VH; M2 < 1100 (wino), 920 (hino) [CONF-2021-022]
+- 2106.01676       :139 - N2C1 to WZ; M2 < 640 (incl. degen) [CONF-2020-015]
+- 1912.08479       :139 - N2C1 to WZ; M2 < 350 (only degen) [CONF-2019-020]
 - 1806.02293       : 36 - N2C1 to WZ; M2 < 650
 - 1803.02762       : 36 - N2C1 to WZ; M2 < 600
 - SUS-17-004       : 36 - N2C1 to WZ; M2 < 700
 - SUS-16-034       : 36 - N2C1 to WZ; M2 < 650
 - SUS-16-039       : 36 - N2C1 to WZ; M2 < 450
 
-
 ### WH
 
-- SUS-20-003       :137 - N2C1 to WH; M2 < 830
-- SUS-19-012       :137 - N2C1 to WH; M2 < 260
-- 1909.09226       :139 - N2C1 to WH; M2 < 740
-- 2004.10894       :139 - N2C1 to WH; M2 < 320
-- ATL-CONF-2020-015:139 - N2C1 to WH; M2 < 190
+- SUS-21-002       :137 - N2C1 to HW(0l4j); M2 < 950
+- 2107.12253       :137 - N2C1 to WH(bb); M2 < 830 [SUS-20-003]
+- 2106.14246       :137 - N2C1 to WH(tata?); M2 < 270 [SUS-19-012]
+- 2108.07586       :139 - EWEW to VH; M2 < 1100 (wino), 920 (hino) [CONF-2021-022]
+- 1909.09226       :139 - N2C1 to WH(bb); M2 < 740
+- 2004.10894       :139 - N2C1 to WH(aa); M2 < 320 [post our JHEP; superseding ATL-CONF-2019-019]
+- 2106.01676       :139 - N2C1 to WH(ll); M2 < 190 [CONF-2020-015]
 - 1812.09432       : 36 - N2C1 to WH; M2 < 700
 - SUS-17-004       : 36 - N2C1 to WH; M2 < 500
 - SUS-16-039       : 36 - N2C1 to WH; M2 < 200
 - SUS-16-045       : 36 - N2C1 to WH; 200 < M2 < 500
 - SUS-16-043       : 36 - N2C1 to WH; M2 < 180
-- SUS-18-007       : 77 - N2C1 to HW, M2 < 240
-
+- 1908.08500       : 77 - N2C1 to HW; M2 < 240 [SUS-18-007]
 
 ### WW
 
+- SUS-21-002       :137 - C1C1 to WW(0l4j); M2 < 670
+- 2108.07586       :139 - EWEW to VH; M2 < 1100 (wino), 920 (hino) [CONF-2021-022]
+- 1908.08215       :139 - C1C1 to WW; M2 < 450 [CONF-2018-042, CONF-2019-008]
 - SUS-17-010       : 36 - C1C1 to WW, limit observed for M2 < 200 and M1 = 1
-- ATL-CONF-2018-042: 81 - C1C1 to WW; M2 < 450 superseded by 1908.08215
-- ATL-CONF-2019-008:139 - C1C1 to WW; M2 < 450 superseded by 1908.08215
-- 1908.08215        139 - C1C1 to WW; M2 < 450
 
+### HH
+
+- SUS-20-004       :137 - N3N2 to HH(2j2b); (M2, M1) < (540, 130)
+- 2108.07586       :139 - HiHi to HH(grav)
 
 ### via slepton/stau
 
-- SUS-19-012       :137 - N2C1 to slep to 3lep (0.5, 0.05, 0.95); M2 < 1500
 - 1803.02762       : 36 - N2C1 to slep to 3lep (0.5); M2 < 1200
 - SUS-16-039       : 36 - N2C1 to slep to 3lep (0.5, 0.05, 0.95); M2 < 1200
+- 2106.14246       :137 - N2C1 to slep to 3lep (0.5, 0.05, 0.95); M2 < 1500; 2lSS; 3-4l incl 0-2tau
 
-- SUS-19-012       :137 - N2C1 to slep to 2l1t (0.5, 0.05, 0.95); M2 < 1200
 - SUS-16-039       : 36 - N2C1 to slep to 2l1t (0.5, 0.05, 0.95); M2 < 1100
-
-- SUS-19-012       :137 - N2C1 to slep to 3tau (0.5, 0.05, 0.95); M2 < 1000
+- 2106.14246       :137 - N2C1 to slep to 2l1t (0.5, 0.05, 0.95); M2 < 1150
 - SUS-16-039       : 36 - N2C1 to slep to 3tau (0.5); M2 < 700
 - PAS-SUS-17-002   : 36 - N2C1 to slep to 3tau (0.5, 0.05, 0.95); M2 < 600
 
@@ -54,6 +57,7 @@
 - 1708.07875       : 36 - N2C1 to stau to 3tau (0.5); M2 < 800
 - SUS-17-003       : 36 - C1C1 to stau to 2tau (0.5); M2 < 700
 - 1708.07875       : 36 - C1C1 to stau to 2tau (0.5); M2 < 650
+- 2106.14246       :137 - N2C1 to slep to 3tau (0.5, 0.05, 0.95); M2 < 1000
 
 - 1803.02762       : 36 - C1C1 to slep(0.5); M2 < 750
 - SUS-17-010       : 36 - C1C1 to slep(0.5), M2 < 800
@@ -62,7 +66,7 @@
 
 ### degenerate
 
-- ATL-CONF-2020-015:139 - N2C1 to ZW; degen Δm(21) <100; M2 < 320
+- 2106.01676       :139 - N2C1 to ZW; degen Δm(21) < 100; M2 < 320 [CONF-2020-015]
 - SUS-18-004       :137 - N2C1 to ZW; degen Δm(21) < 50; M2 < 280
 - 1911.12606       :139 - N2C1 to ZW; degen Δm(21) < 60; M2 < 250
 - SUS-17-007       : 36 - N2C1 to slep(0.5), degen Δm(21) < 55, M2 < 300,
@@ -70,7 +74,6 @@
 - SUS-16-048       : 36 - N2C1 to WZ, degen Δm(21) < 35, M2 < 250
 - 1911.12606       :139 - slep to 2lep; degen Δm < 50; mslep < 300
 - 1910.01185 :     : 77 - stau-coannihilation; stau-direct or N2C1; soft-tauhad + ISR; Δm(21) = 50; M_C1 < 290
-
 
 ### Higgsino-like
 
@@ -80,22 +83,22 @@
 
 ### slepton/stau direct
 
-- 2012.08600       :137 - slsl to 2lep; Msl < 720
-- SUS-20-001       :137 - slsl to 2lep; Msl < 700 [superseded by 2012.08600]
+- 2012.08600       :137 - slsl to 2lep; Msl < 720 (sfos2L) [supersedes SUS-20-001]
 - ATL-CONF-2019-008:139 - slep to 2lep
 - SUS-17-009       : 36 - slsl to 2lep; Msl < 450
 - 1803.02762       : 36 - slep to 2lep
 - 1908.08215       :139 - slsl to 2lep; Msl < 700
 
+- SUS-21-001       :137 - stau to 2tau; mtau < 410(L+R), 350(L), <~230 (mm-lived)
 - 1911.06660       :139 - stau to 2tau
-- SUS-18-006       : 77 - stau to 2tau; mtau < 200
+- 1907.13179       : 77 - stau to 2tau; mtau < 200 [SUS-18-006]
 - SUS-17-003       : 36 - stst to 2tau
 - PAS-SUS-17-002   : 36 - stau to 2tau; no limit observed
 - SUS-19-002 :     : 77 - stau-coannihilation; stau-direct or N2C1; soft-tauhad + ISR; Δm(21) = 50; M_C1 < 290
 
 # Paper based list
 
-SUS-18-007: 77
+1908.08500: 77 [SUS-18-007]
  - N2C1 to HW, M2 < 240
 SUS-18-006: 77
  - stau to 2tau; mtau < 200
@@ -152,8 +155,8 @@ ATL-CONF-2019-014: 139
  - N2C1 to WZ; M2 < 350
 2004.10894: 139 [ATL-CONF-2019-019]
  - N2C1 to WH; M2 < 350
-ATL-CONF-2019-031:139
- - N2C1 to WH; M2 < 740
+1909.09226:139 [ATL-CONF-2019-031]
+ - N2C1 to WH(bb); M2 < 740
 1812.09432: 36
  - N2C1 to WH; M2 < 700
 1806.02293: 36
@@ -171,27 +174,40 @@ ATL-CONF-2019-031:139
  - N2C1 to stau to 3tau (0.5); M2 < 800
  - C2C1 to stau to 2tau (0.5); M2 < 650
 
-# 2020Jan-2021Mar29
-
-SUS-20-003: 137
- - N2C1 to HW; M2 < 830
+2107.12253: 137 [SUS-20-003]
+ - N2C1 to WH(bb); M2 < 830
 SUS-18-004: 137
  - N2C1 to ZW; degen Δm(21) < 50; M2 < 280
  - Higgsino-like N2C1 with C1=(N1+N2)/2, degen Δm(21) < 25; M2 < 220 (pMSSM mu < 190)
-SUS-19-012: 137
+2106.14246: 137 [SUS-19-012] (sfos3L, 2lSS, 3-4l incl 0-2tau)
  - N2C1 to slep to 3lep (0.5, 0.05, 0.95); M2 < 1500
- - N2C1 to slep to 2l1t (0.5, 0.05, 0.95); M2 < 1200
+ - N2C1 to slep to 2l1t (0.5, 0.05, 0.95); M2 < 1150
  - N2C1 to slep to 3tau (0.5, 0.05, 0.95); M2 < 1000
  - N2C1 to WZ; M2 < 650
- - N2C1 to WH; M2 < 260
+ - N2C1 to WH(tata?); M2 < 270
 2012.08600: 137 [SUS-20-001]
  - N2C1 to ZW; M2 < 760
  - slsl to 2lep; Msl < 720
 
-ATL-CONF-2020-015: 139
+2106.01676: 139 [CONF-2020-015]
  - N2C1 to ZW; M2 < 640
  - N2C1 to ZW; degen Δm(21) < 100; M2 < 320
- - N2C1 to HW; M2 < 190
-2004.10894: 139
- - N2C1 to HW; M2 < 320
+ - N2C1 to HW(ll); M2 < 190
+2004.10894: 139 [CONF-2019-019]
+ - N2C1 to HW(aa); M2 < 320
+
+SUS-20-004: 137
+ - N3N2 to HH(2j2b); (M2, M1) < (540, 130)
+SUS-21-001: 137
+ - stau to 2tau; mtau < 410(L+R), 350(L), <~230 (mm-lived)
+SUS-21-002: 137
+ - N2C1 to ZW(0l4j); M2 < 690
+ - N2C1 to HW(0l4j); M2 < 950
+ - C1C1 to WW(0l4j); M2 < 670
+
+2108.07586: 139 [CONF-2021-022]
+ - EWEW to VH; M2 < 1100 (wino), 920 (hino)
+ - Z/h-funnel bino-like LSP
+ - Bino-decoupled models
+ - HiHi to HH (grav)
 
